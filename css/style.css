@@ -15,24 +15,33 @@ header div {
 }
 
 h1 {
-    color: white;
+    font-family: "Bungee Spice", sans-serif;
 }
 
 
 /* FORM */
 
 header form {
-    width: 300px;
+    width: 400px;
 }
 
 header input {
     padding: 5px;
 
-    font-size: 1.1em;
-    background-color: black;
-    color: white;
+    margin-left: 20px;
     border: none;
+
+    font-family: "Bungee Spice", sans-serif;
+    font-size: 1.4em;
+
+    background-color: black;
+    
 }
+
+form  select {
+    width: 100px;
+}
+
 
 /* Starting Main */
 

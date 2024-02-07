@@ -34,19 +34,19 @@ ButtonElement.addEventListener("click", function(event){
     const difficultyChoice = document.querySelector("#level-select").value;
 
     // metto un contatore
-    let numberOfElements;
+    let numberOfCells;
 
     if (difficultyChoice == "difficile") {
-        numberOfElements = 100;
+        numberOfCells = 100;
     } else if (difficultyChoice == "medio") {
-        numberOfElements = 81;
+        numberOfCells = 81;
     } else if (difficultyChoice == "facile") {
-        numberOfElements = 49;
+        numberOfCells = 49;
     } else {
         alert("scegli un livello!");
     }
 
-    for (let i = 0; i < numberOfElements; i++) {
+    for (let i = 0; i < numberOfCells; i++) {
 
         // dichiaro container 
         const containerElement = document.getElementById("grid");
@@ -60,11 +60,11 @@ ButtonElement.addEventListener("click", function(event){
         // aggiungo i numeri nelle celle
         newElement.innerText = getNumbersArray()[i];
 
-        if (numberOfElements === 100) {
+        if (numberOfCells === 100) {
             // aggiungo classe al container
             containerElement.classList.add("container-10");
 
-        } else if (numberOfElements === 81) {
+        } else if (numberOfCells === 81) {
             // aggiungo classe al container
             containerElement.classList.add("container-9");
 
