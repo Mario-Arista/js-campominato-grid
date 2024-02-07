@@ -1,0 +1,30 @@
+header {
+    width: 100%;
+    height: 100px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-color: #282828;
+}
+
+header div {
+    width: 100%;
+}
+
+h1 {
+    color: white;
+}
+
+header form {
+    width: 300px;
+}
+
+header input {
+    padding: 5px;
+
+    font-size: 1.1em;
+    background-color: black;
+    color: white;
+    border: none;
+}
