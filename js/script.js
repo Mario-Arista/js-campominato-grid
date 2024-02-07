@@ -10,7 +10,7 @@ function getNumbersArray(number) {
     // Dichiaro array vuoto
     const arrayWhitNumbers = [];
 
-    // Faccio un for per 100 numeri per il momento
+    // Faccio un for per 100 numeri
     for (let i = 1; i <= 101; i++) {
 
         // inserisci numeri in array vuoto
@@ -48,14 +48,31 @@ ButtonElement.addEventListener("click", function(event){
 
     for (let i = 0; i < numberOfElements; i++) {
 
+        // dichiaro container 
+        const containerElement = document.getElementById("grid");
+
         // creo un elemento
         const newElement = document.createElement("div");
-        
-        // aggiungo la classe square
-        newElement.classList.add("square-10");
 
         // aggiungo la classe square
+        newElement.classList.add("square");
+
+        // aggiungo i numeri nelle celle
         newElement.innerText = getNumbersArray()[i];
+
+        if (numberOfElements === 100) {
+            // aggiungo classe al container
+            containerElement.classList.add("container-10");
+
+        } else if (numberOfElements === 81) {
+            // aggiungo classe al container
+            containerElement.classList.add("container-9");
+
+        } else {
+            // aggiungo classe al container
+            containerElement.classList.add("container-7");
+
+        }
 
         //aggiungo il nuovo elemento alla row
         gridElement.append(newElement);

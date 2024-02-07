@@ -1,7 +1,7 @@
 /* HEADER */
 
 header {
-    width: 100%;
+    width: 100vw;
     height: 100px;
 
     padding-left: 20px;
@@ -40,7 +40,19 @@ main {
     margin-top: 30px;
 }
 
-.square-10 {
+.container-10 {
+    width: 1000px;
+}
+
+.container-9 {
+    width: 900px;
+}
+
+.container-7 {
+    width: 700px;
+}
+    
+.square {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +60,7 @@ main {
     width: 100px;
     height: 100px;
 
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: sans-serif;
     font-weight: bold;
 
