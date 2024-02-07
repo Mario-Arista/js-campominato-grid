@@ -20,8 +20,6 @@ function getNumbersArray(number) {
 
     // restituisco array pieno
     return arrayWhitNumbers;
-    
-
 }
 
 
@@ -38,13 +36,25 @@ ButtonElement.addEventListener("click", function(event){
         const newElement = document.createElement("div");
         
         // aggiungo la classe square
-        newElement.classList.add("square");
+        newElement.classList.add("square-10");
 
         // aggiungo la classe square
         newElement.innerText = getNumbersArray()[i];
 
         //aggiungo il nuovo elemento alla row
         gridElement.append(newElement);
+
+        //aggiungo che se clicco il nuovo elemento
+        // cambia background color
+        newElement.addEventListener("click", function() {
+
+            this.classList.toggle("green");
+            console.log("è stata cliccata la cella numero:", getNumbersArray()[i]);
+            
+
+        });
+
+        
     }
 
 });
