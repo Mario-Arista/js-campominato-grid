@@ -28,3 +28,14 @@ header input {
     color: white;
     border: none;
 }
+
+.square {
+    width: 100px;
+    height: 100px;
+
+    /* test */
+    background-color: blue;
+    color: white;
+    border: 1px solid black;
+
+}
