@@ -4,12 +4,6 @@ const gridElement = document.querySelector(".row");
 // dichiaro button
 const ButtonElement = document.querySelector("#start-button");
 
-// dichiaro valori options dentro select
-const difficileInputElement = document.getElementById("level-dif").value;
-const medioInputElement = document.getElementById("level-med").value;
-const facileInputElement = document.getElementById("level-med").value;
-
-
 // Funzione per riempire array
 function getNumbersArray(number) {
 
@@ -17,7 +11,7 @@ function getNumbersArray(number) {
     const arrayWhitNumbers = [];
 
     // Faccio un for per 100 numeri per il momento
-    for (let i = 1; i <= number; i++) {
+    for (let i = 1; i <= 100; i++) {
 
         // inserisci numeri in array vuoto
         arrayWhitNumbers.push(i);
@@ -36,12 +30,23 @@ ButtonElement.addEventListener("click", function(event){
     // Prevengo eventuali problemi
     event.preventDefault()
 
-    if (difficileInputElement === "difficile") {
+    // valore della select
+    const difficultyChoice = document.querySelector("#level-select").value;
 
+    // metto un contatore
+    let numberOfElements;
+
+    if (difficultyChoice == "difficile") {
+        numberOfElements = 100;
+    } else if (difficultyChoice == "medio") {
+        numberOfElements = 81;
+    } else if (difficultyChoice == "facile") {
+        numberOfElements = 49;
+    } else {
+        alert("scegli un livello!");
     }
 
-    
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < numberOfElements; i++) {
 
         // creo un elemento
         const newElement = document.createElement("div");
@@ -50,7 +55,7 @@ ButtonElement.addEventListener("click", function(event){
         newElement.classList.add("square-10");
 
         // aggiungo la classe square
-        newElement.innerText = getNumbersArray(100)[i];
+        newElement.innerText = getNumbersArray()[i];
 
         //aggiungo il nuovo elemento alla row
         gridElement.append(newElement);
