@@ -11,7 +11,7 @@ function getNumbersArray(number) {
     const arrayWhitNumbers = [];
 
     // Faccio un for per 100 numeri per il momento
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 101; i++) {
 
         // inserisci numeri in array vuoto
         arrayWhitNumbers.push(i);
