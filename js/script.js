@@ -4,25 +4,6 @@ const gridElement = document.querySelector(".row");
 // dichiaro button
 const ButtonElement = document.querySelector("#start-button");
 
-// Funzione per riempire array
-function getNumbersArray(number) {
-
-    // Dichiaro array vuoto
-    const arrayWhitNumbers = [];
-
-    // Faccio un for per 100 numeri
-    for (let i = 1; i <= 101; i++) {
-
-        // inserisci numeri in array vuoto
-        arrayWhitNumbers.push(i);
- 
-    }
-
-    // restituisco array pieno
-    return arrayWhitNumbers;
-}
-
-
 // Inizio evento al click 
 
 ButtonElement.addEventListener("click", function(event){
@@ -30,26 +11,40 @@ ButtonElement.addEventListener("click", function(event){
     // Prevengo eventuali problemi
     event.preventDefault()
 
+    // // resetto la griglia in maniera tale da non cerare una nuava griglia ogni
+    // // volta che clicco
+    gridElement.innerHTML = "";
+
     // valore della select
     const difficultyChoice = document.querySelector("#level-select").value;
+
+    // dichiaro container 
+    const containerElement = document.getElementById("grid");
 
     // metto un contatore
     let numberOfCells;
 
     if (difficultyChoice == "difficile") {
-        numberOfCells = 100;
-    } else if (difficultyChoice == "medio") {
-        numberOfCells = 81;
-    } else if (difficultyChoice == "facile") {
+
         numberOfCells = 49;
+        containerElement.classList.add("container-7");
+
+    } else if (difficultyChoice == "medio") {
+
+        numberOfCells = 81;
+        containerElement.classList.add("container-9");
+
+    } else if (difficultyChoice == "facile") {
+
+        numberOfCells = 100;
+        containerElement.classList.add("container-10");
+
     } else {
-        alert("scegli un livello!");
+
+        alert("Scegli un livello per giocare!");
     }
 
-    for (let i = 0; i < numberOfCells; i++) {
-
-        // dichiaro container 
-        const containerElement = document.getElementById("grid");
+    for (let i = 1; i < numberOfCells +1; i++) {
 
         // creo un elemento
         const newElement = document.createElement("div");
@@ -58,21 +53,7 @@ ButtonElement.addEventListener("click", function(event){
         newElement.classList.add("square");
 
         // aggiungo i numeri nelle celle
-        newElement.innerText = getNumbersArray()[i];
-
-        if (numberOfCells === 100) {
-            // aggiungo classe al container
-            containerElement.classList.add("container-10");
-
-        } else if (numberOfCells === 81) {
-            // aggiungo classe al container
-            containerElement.classList.add("container-9");
-
-        } else {
-            // aggiungo classe al container
-            containerElement.classList.add("container-7");
-
-        }
+        newElement.innerText = i;
 
         //aggiungo il nuovo elemento alla row
         gridElement.append(newElement);
@@ -81,8 +62,8 @@ ButtonElement.addEventListener("click", function(event){
         // cambia background color
         newElement.addEventListener("click", function() {
 
-            this.classList.toggle("green");
-            console.log("è stata cliccata la cella numero:", getNumbersArray()[i]);
+            this.classList.toggle("active");
+            console.log("è stata cliccata la cella numero:", this);
             
 
         });

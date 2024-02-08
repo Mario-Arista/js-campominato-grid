@@ -11,10 +11,15 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Font  -->
+    <!-- Font H1 + BUTTON -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    
+    <!-- Font CELLE e SELECT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -26,16 +31,17 @@
                 <h1>CAMPO MINATO</h1>
             </div>
 
-            <form class="flex align-between">
+            <form class="flex justify-end">
                 <select name="difficulty" id="level-select">
-                    <option id="level-dif" value="">Scegli il livello!</option>
-                    <option id="level-med" value="difficile">difficile</option>
-                    <option id="level-fac" value="medio">medio</option>
-                    <option value="facile">facile</option>
+                    <option  value="">Scegli il livello!</option>
+                    <option id="level-fac" value="facile">FACILE</option>
+                    <option id="level-med" value="medio">MEDIUM</option>
+                    <option id="level-dif" value="difficile">DIFFICILE</option>
+                   
                 </select>
-                <div>
-                    <input value="GIOCA" id="start-button" type="button">
-                </div>
+                
+                <input value="GIOCA" id="start-button" type="button">
+                
             </form>
 
         </div>
